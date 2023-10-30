@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express</title>
+  </head>
+  <body>
+    <div>
+      <h1>领取瑞幸验证码</h1>
+      <h3>登录验证信息</h3>
+      <form id="form" action="">
+        <label
+          >微信昵称
+          <input id="vxid-input" type="text" name="vxid" placeholder="请输入微信id" />
+        </label>
+
+        <input id="form-submit" type="submit" />
+        <br>
+        <span id="form-span" style="color: red"></span>
+      </form>
+      <h3>您的兑换码为：<span id="rxcode-span"></span></h3>
+
+      <button id="print-btn">管理者打印用户列表</button>
+      <div id="print-area"></div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./index.js"></script>
+</html>
