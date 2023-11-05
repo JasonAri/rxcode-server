@@ -18,14 +18,13 @@ app.all("*", (req, res, next) => {
 // vxid和兑奖码 (实际从数据库引入)
 let userInfoList = require("./mock.js");
 
-app.get("/admin", (req, res) => {
+// 后台管理接口
+app.get("/api/admin", (req, res) => {
   res.send({ code: 200, data: userInfoList, msg: "OK" });
 });
 
 // api
-app.post("/rxcode", (req, res) => {
-  console.log('post /rxcode')
-
+app.post("/api/rxcode", (req, res) => {
   let resultData = {};
   // 解构vxid
   const { vxid } = req.body;
@@ -65,5 +64,8 @@ app.post("/rxcode", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("express serve listening...");
+  console.log(
+    "\x1B[37m%s\x1B[0m",
+    "[Express] Server URL: http://127.0.0.1:3000 "
+  );
 });

@@ -13,7 +13,7 @@ printBtn.onclick = function (e) {
   printArea.innerHTML=''
 
   // 发请求
-  axios.get('/admin').then(res => {
+  axios.get('/api/admin').then(res => {
     const resultData = res.data.data
     const ulNode = document.createElement('UL')
     for (let i = 0; i < resultData.length; i++) {
@@ -52,7 +52,7 @@ formSubmit.onclick = function (e) {
 
     console.log('发axios请求...')
     axios
-      .post('/rxcode', { vxid })
+      .post('/api/rxcode', { vxid })
       .then(res => {
         // 解构兑换码
         const { rxCode } = res.data.data
